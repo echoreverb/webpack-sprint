@@ -27,7 +27,7 @@ $ npm run build
 > деплой
 
 ```shell
-$ npm run build
+$ npm run deploy
 ```
 
 ---
