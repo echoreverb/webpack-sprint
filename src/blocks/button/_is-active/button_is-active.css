@@ -1,0 +1,8 @@
+.button.button_is-active {
+  background-color: black;
+  color: white;
+}
+
+.button.button_is-active:hover {
+  border: 1px solid black;
+}

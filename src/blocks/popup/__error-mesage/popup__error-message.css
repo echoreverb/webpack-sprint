@@ -1,0 +1,11 @@
+@import url(./_visible/popup__error-message_visible.css);
+
+.popup__error-message {
+    color: #FF0000;
+    display: block;
+    position: absolute;
+    margin: 5px 0 0 6px;
+    font-size: 12px;
+    line-height: 14px;
+    display: none;
+}
