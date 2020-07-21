@@ -1,7 +1,10 @@
-# Проектная работа #11
+# Проектная #11. Фронтенд проекта Место
 
-В этой работе происходит сборка проекта Mesto с помощью [Webpack](http://webpack.js.org), [Babel](http://babeljs.io) и других инструментов.
+В этой работе происходит сборка разработанной на JS (ООП) фронтенд-части проекта Место с помощью [Webpack](http://webpack.js.org), [Babel](http://babeljs.io) и других инструментов.
 
+## О проекте
+
+Место - это сайт, на котором собраны карточки с изображениями. Пользователь может добавить/удалить карточку, поставить/убрать лайк, редактировать информацию в профиле. Функционал разработан на чистом JavaScript с использованием классов. Запросы к серверу выполнены с помощью Fetch API.
 
 ## Ссылки
 
@@ -12,27 +15,33 @@
 
 ## Установка
 
-> установка модулей npm
+- установка модулей npm
 
 ```shell
 $ npm install
 ```
 
-> сборка
+- dev-сборка с хот-релоудом
+
+```shell
+$ npm run dev
+```
+
+- сборка
 
 ```shell
 $ npm run build
 ```
 
-> деплой
+-  деплой
 
 ```shell
 $ npm run deploy
 ```
 
 
-## Используемые инструменты
+## Инструменты, используемые при сборке
 
-* [Webpack](http://webpack.js.org) - Сборка
-* [Babel](http://babeljs.io) - Транспиляция JS
-* [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin), [cssnano](https://github.com/cssnano/cssnano) - Обработка CSS
+* [Webpack](http://webpack.js.org) - сборка
+* [Babel](http://babeljs.io) - транспиляция JS
+* [Mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin), [Cssnano](https://github.com/cssnano/cssnano) - обработка CSS
