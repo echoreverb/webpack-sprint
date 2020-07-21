@@ -29,8 +29,6 @@ export default class Api {
         return res.json();
       })
       .catch((err) => {
-        // Можно лучше
-        // return Promise.reject(new Error(err.message));
         return Promise.reject(err);
       });
   }

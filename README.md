@@ -1,14 +1,14 @@
 # Проектная работа #11
 
-> В этой работе происходит сборка проекта Mesto с помощью [Webpack](http://webpack.js.org), [Babel](http://babeljs.io) и других инструментов.
+В этой работе происходит сборка проекта Mesto с помощью [Webpack](http://webpack.js.org), [Babel](http://babeljs.io) и других инструментов.
 
----
 
-## Ссылка на скачивание
+## Ссылки
 
-> [v1.0.1](https://github.com/echoreverb/webpack-sprint)
+Исходный код: https://github.com/echoreverb/webpack-sprint
 
----
+Деплой: https://echoreverb.github.io/webpack-sprint
+
 
 ## Установка
 
@@ -30,7 +30,6 @@ $ npm run build
 $ npm run deploy
 ```
 
----
 
 ## Используемые инструменты
 

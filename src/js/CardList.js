@@ -18,8 +18,6 @@ export default class CardList {
         array.forEach((data) => this.addCard(data, this.popupImg));
       })
       .catch((err) => {
-        // Можно лучше
-        // Передавать err.message
         this.apiInstance.alertError(err);
       });
   }
