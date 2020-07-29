@@ -1,17 +1,18 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const WebpackMd5Hash = require("webpack-md5-hash");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const path = require("path");
-const webpack = require("webpack");
-const isDev = process.env.NODE_ENV === "development";
+const path = require('path');
+const webpack = require('webpack');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: { main: './src/index.js' },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -19,40 +20,40 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
       {
         test: /\.css$/i,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
         ],
       },
       {
         test: /\.(svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
               esModule: false,
-              outputPath: "./images/",
+              outputPath: './images/',
             },
           },
         ],
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]'
+        loader: 'file-loader?name=./vendor/[name].[ext]',
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
-              name: "[path][chunkhash].[ext]",
+              name: '[path][chunkhash].[ext]',
               bypassOnDebug: true,
               disable: false,
             },
@@ -63,20 +64,21 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.[chunkhash].css",
+      filename: 'style.[chunkhash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require("cssnano"),
+      // eslint-disable-next-line global-require
+      cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
-        preset: ["default"],
+        preset: ['default'],
       },
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: "./src/index.html",
-      filename: "index.html",
+      template: './src/index.html',
+      filename: 'index.html',
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
