@@ -1,5 +1,4 @@
 export default class FormProfile {
-
   constructor(form, formValidatorInstance, popupInstance, userInfoInstance) {
     this.form = form;
     this.formValidatorInstance = formValidatorInstance;
@@ -19,13 +18,13 @@ export default class FormProfile {
 
   _submitFunc() {
     if (this.formValidatorInstance.validateForm()) {
+      // eslint-disable-next-line no-restricted-globals
       event.preventDefault();
       this.userInfoInstance.updateUserInfo()
         .then(() => {
-          this.popupInstance.close()
+          this.popupInstance.close();
         })
-        .catch((err) => alert(`Извините, ошибка ${err} :(`))
+        .catch((err) => alert(`Извините, ошибка ${err} :(`));
     }
   }
 }
-

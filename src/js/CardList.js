@@ -1,5 +1,4 @@
 export default class CardList {
-
   constructor(container, funcNewCard, popupImg, apiInstance) {
     this.container = container;
     this.funcNewCard = funcNewCard;
@@ -8,7 +7,7 @@ export default class CardList {
   }
 
   addCard(data) {
-    const cardElement = this.funcNewCard(data, this.popupImg)
+    const cardElement = this.funcNewCard(data, this.popupImg);
     this.container.append(cardElement);
   }
 
