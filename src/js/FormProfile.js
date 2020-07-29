@@ -24,6 +24,7 @@ export default class FormProfile {
         .then(() => {
           this.popupInstance.close();
         })
+        // eslint-disable-next-line no-alert
         .catch((err) => alert(`Извините, ошибка ${err} :(`));
     }
   }

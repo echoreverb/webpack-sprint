@@ -29,6 +29,7 @@ export default class UserInfo {
         this.renderUserInfo();
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err);
         return Promise.reject(err);
       });
