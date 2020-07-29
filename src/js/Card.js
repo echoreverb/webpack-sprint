@@ -1,5 +1,5 @@
+/* eslint-disable no-undef */
 export default class Card {
-
   constructor({ name, link }, popup) {
     this.name = name;
     this.link = link;
@@ -10,12 +10,13 @@ export default class Card {
     this.cardElement = this._create({ name, link });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _like(event) {
     event.target.classList.toggle('place-card__like-icon_liked');
   }
 
   _remove(event) {
-    event.stopPropagation()
+    event.stopPropagation();
     this.cardElement
       .querySelector('.place-card__image')
       .removeEventListener('click', this._showFullImg);
@@ -72,5 +73,4 @@ export default class Card {
 
     return cardElement;
   }
-
 }

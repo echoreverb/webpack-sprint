@@ -1,5 +1,4 @@
 export default class FormCard {
-
   constructor(form, formValidatorInstance, popupInstance, cardListInstance) {
     this.form = form;
     this.formValidatorInstance = formValidatorInstance;
@@ -24,13 +23,17 @@ export default class FormCard {
     this
       .form
       .querySelectorAll('.popup__error-message')
-      .forEach(elem => elem.textContent = '');
+      .forEach((elem) => {
+        // eslint-disable-next-line no-param-reassign
+        elem.textContent = '';
+      });
 
     this.form.reset();
   }
 
   _submitFunc() {
     if (this.formValidatorInstance.validateForm()) {
+      // eslint-disable-next-line no-restricted-globals
       event.preventDefault();
       const name = this.form.elements.name.value;
       const link = this.form.elements.link.value;

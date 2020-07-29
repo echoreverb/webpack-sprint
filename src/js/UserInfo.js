@@ -1,5 +1,4 @@
 export default class UserInfo {
-
   constructor(nameElement, aboutElement, userpicElement, inputName, inputAbout, apiInstance) {
     this.nameElement = nameElement;
     this.aboutElement = aboutElement;
@@ -16,7 +15,7 @@ export default class UserInfo {
       .then((res) => {
         this._setUserInfoWithResponse(res);
         this.renderUserInfo();
-        this.userpicElement.setAttribute('style', `background-image: url(${res.avatar})`)
+        this.userpicElement.setAttribute('style', `background-image: url(${res.avatar})`);
       })
       .catch((err) => {
         this.apiInstance.alertError(err);
@@ -30,7 +29,8 @@ export default class UserInfo {
         this.renderUserInfo();
       })
       .catch((err) => {
-        console.log(err)
+        // eslint-disable-next-line no-console
+        console.log(err);
         return Promise.reject(err);
       });
   }

@@ -1,5 +1,4 @@
 export default class FormValidator {
-
   constructor(form, ERROR_MESSAGES) {
     this.form = form;
     this.ERROR_MESSAGES = ERROR_MESSAGES;
@@ -9,29 +8,24 @@ export default class FormValidator {
   }
 
   _checkInputValidity(elem) {
+    // eslint-disable-next-line no-restricted-globals
     event.preventDefault();
     const errorElement = elem.nextElementSibling;
 
     if (elem.validity.valueMissing) {
       errorElement.textContent = this.ERROR_MESSAGES.valueMissing;
       return false;
-
     } if (elem.name === 'link') {
-
       if (elem.validity.patternMismatch) {
         errorElement.textContent = this.ERROR_MESSAGES.notALink;
         return false;
-      } else {
-        return true;
       }
-
-    } else if (elem.validity.tooShort || elem.validity.tooLong) {
+      return true;
+    } if (elem.validity.tooShort || elem.validity.tooLong) {
       errorElement.textContent = this.ERROR_MESSAGES.improperLength;
       return false;
-
-    } else {
-      return true;
     }
+    return true;
   }
 
   validateForm() {
@@ -67,11 +61,13 @@ export default class FormValidator {
     this.setSubmitButtonState();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _showErrorElem(elem) {
     elem.nextElementSibling
       .classList.add('popup__error-message_visible');
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _hideErrorElem(elem) {
     elem.nextElementSibling
       .classList.remove('popup__error-message_visible');
@@ -79,8 +75,7 @@ export default class FormValidator {
 
   hideErrors() {
     this.inputs.forEach((elem) => {
-      this._hideErrorElem(elem)
+      this._hideErrorElem(elem);
     });
   }
-
 }
