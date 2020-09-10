@@ -17,7 +17,7 @@ const ERROR_MESSAGES = {
 };
 
 const api = new Api(
-  'https://praktikum.tk/cohort10',
+  'https://nomoreparties.co/cohort10',
   'bb598799-72f3-4198-ae33-7ed1b0aa4ce6',
   {
     headers: {
